@@ -1,5 +1,9 @@
 @extends('layouts.app')
-
 @section('content')
-	@include('partials.series')
+	<div class="container">
+		<div class="row">
+			<div class="col py-4"><h1>ciao</h1></div>
+		</div>
+	</div>
+	
 @endsection
