@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ComicController as ComicController;
+use App\Http\Controllers\ComicsController as ComicsController;
+use App\Http\Controllers\PagesController as PagesController;
+use App\Models\Comic as Comic;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +16,12 @@ use App\Http\Controllers\ComicController as ComicController;
 |
 */
 
-Route::get('/', [ComicController::class, 'index']);
+Route::get('/', [PagesController::class, 'index'])->name('homepage');
+
+Route::resource('/comics', ComicsController::class);
 
 Route::get('/comic-detail/{id}', function($id) {
-    $comics = config('comics.series');
+    $comics = Comic::all();
     $pages = config('comics.pages');
     $detail = '';
     foreach($comics as $key => $item) {
