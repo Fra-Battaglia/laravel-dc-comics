@@ -6,8 +6,8 @@
 			{{-- comics --}}
 			@foreach ($comics as $key => $item)
 				<div class="col-6 col-md-4 col-lg-2 comic pb-4">
-					<img src="{{ $item['thumb'] }}" alt="{{ $item['title'] }}" class="mb-2">
-					<a href="{{ route('comic-detail', ['id' => $key]) }}">
+					<a href="{{ route('comics.show', ['comic' => $item['id']]) }}">
+						<img src="{{ $item['thumb'] }}" alt="{{ $item['title'] }}" class="mb-2">
 						<div class="text-uppercase">{{ $item['series'] }}</div>
 					</a>
 				</div>

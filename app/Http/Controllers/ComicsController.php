@@ -48,7 +48,17 @@ class ComicsController extends Controller
      */
     public function show($id)
     {
-        //
+        $comic = Comic::find($id);
+        $pages = config('comics.pages');
+        if($comic) {
+            $data = [
+                'detail' => $comic,
+                'pages' => $pages,
+            ];
+
+            return view('comic-detail', $data);
+        }
+        abort(404);
     }
 
     /**

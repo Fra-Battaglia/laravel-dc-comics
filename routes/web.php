@@ -18,17 +18,17 @@ use App\Models\Comic as Comic;
 
 Route::get('/', [PagesController::class, 'index'])->name('homepage');
 
-Route::resource('/comics', ComicsController::class);
+Route::resource('comics', ComicsController::class);
 
-Route::get('/comic-detail/{id}', function($id) {
-    $comics = Comic::all();
-    $pages = config('comics.pages');
-    $detail = '';
-    foreach($comics as $key => $item) {
-        if($id == $key) {
-            $detail = $item;
-        }
-    }
+// Route::get('/comic-detail/{id}', function($id) {
+//     $comics = Comic::all();
+//     $pages = config('comics.pages');
+//     $detail = '';
+//     foreach($comics as $key => $item) {
+//         if($id == $key) {
+//             $detail = $item;
+//         }
+//     }
 
-    return view('comic-detail', compact('comics', 'pages', 'detail'));
-})->name('comic-detail');
+//     return view('comic-detail', compact('comics', 'pages', 'detail'));
+// })->name('comic-detail');
