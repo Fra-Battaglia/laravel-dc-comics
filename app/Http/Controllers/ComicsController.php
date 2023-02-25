@@ -26,7 +26,8 @@ class ComicsController extends Controller
      */
     public function create()
     {
-        //
+        $pages = config('comics.pages');
+        return view('comics.create', compact('pages'));
     }
 
     /**
@@ -37,7 +38,8 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Comic::create($request->all());
+        return redirect('/comics');
     }
 
     /**

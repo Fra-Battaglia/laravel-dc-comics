@@ -16,6 +16,7 @@
 		</div>
 		<div class="row justify-content-center load-more">
 			<a href="#" class="w-auto fw-bold">LOAD MORE</a>
+			<a href="{{ route('comics.create')}}" class="w-auto fw-bold">ADD COMIC</a>
 		</div>
 	</div>
 </section>
