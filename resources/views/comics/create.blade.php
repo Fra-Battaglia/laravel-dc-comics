@@ -5,6 +5,15 @@
 			<div class="col">
 				<form action="{{route("comics.store")}}" method="POST" class="py-4">
 					@csrf
+					@if ($errors->any())
+						<div class="mb-3">
+							<ul class="text-danger">
+								@foreach ($errors->all() as $item)
+									<li>{{ $item }}</li>
+								@endforeach
+							</ul>
+						</div>	
+					@endif
 					<div class="mb-3">
 						<label for="" class="form-label">Titolo</label>
 						<input type="text" class="form-control" id="" aria-describedby="" name="title" placeholder="Aggiungi titolo">

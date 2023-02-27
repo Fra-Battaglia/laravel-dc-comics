@@ -6,6 +6,15 @@
 				<form action="{{route('comics.update', ['comic' => $comic['id']])}}" method="POST" class="py-4">
 					@csrf
 					@method('PUT')
+					@if ($errors->any())
+						<div class="mb-3">
+							<ul>
+								@foreach ($errors->all() as $item)
+									<li>{{ $item }}</li>
+								@endforeach
+							</ul>
+						</div>	
+					@endif
 					<div class="mb-3">
 						<label for="" class="form-label">Titolo</label>
 						<input type="text" class="form-control" value="{{ old('title') ?? $comic->title }}" name="title" placeholder="Aggiungi titolo">

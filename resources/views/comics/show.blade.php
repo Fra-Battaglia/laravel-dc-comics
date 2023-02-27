@@ -52,9 +52,7 @@
 					<a href="{{ route('comics.edit', $detail)}}" class="w-auto fw-bold">EDIT COMIC</a>
 					<form action="{{ route('comics.destroy', $detail->id) }}" method="POST">
 						@csrf
-
 						@method('DELETE')
-
 						<input type="submit" value="Cancella" class="btn btn-danger">
 					</form>
 				</div>
