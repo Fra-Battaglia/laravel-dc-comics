@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comic as Comic;
+use Symfony\Contracts\Service\Attribute\Required;
+use Illuminate\Support\Facades\Validator;
 
 class ComicsController extends Controller
 {
@@ -58,7 +60,7 @@ class ComicsController extends Controller
                 'pages' => $pages,
             ];
 
-            return view('comic-detail', $data);
+            return view('comics.show', $data);
         }
         abort(404);
     }
@@ -71,7 +73,9 @@ class ComicsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comic = Comic::find($id);
+        $pages = config('comics.pages');
+        return view('comics.edit', compact('comic', 'pages'));
     }
 
     /**
@@ -81,9 +85,11 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $data = $request->all();
+        $comic->update($data);
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
@@ -92,8 +98,9 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return redirect()->route('comics.index');
     }
 }

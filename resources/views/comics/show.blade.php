@@ -46,6 +46,19 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="row">
+				<div class="col d-flex gap-4 align-items-center py-4">
+					<a href="{{ route('comics.edit', $detail)}}" class="w-auto fw-bold">EDIT COMIC</a>
+					<form action="{{ route('comics.destroy', $detail->id) }}" method="POST">
+						@csrf
+
+						@method('DELETE')
+
+						<input type="submit" value="Cancella" class="btn btn-danger">
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
 @endsection
