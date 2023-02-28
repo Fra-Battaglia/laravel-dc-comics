@@ -3,7 +3,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
-				<form action="{{route('comics.update', ['comic' => $comic['id']])}}" method="POST" class="py-4">
+				<form action="{{route('comics.update', ['comic' => $comic['id']])}}" method="POST" class="py-4 comic-form">
 					@csrf
 					@method('PUT')
 					@if ($errors->any())
@@ -15,37 +15,37 @@
 							</ul>
 						</div>	
 					@endif
-					<div class="mb-3">
-						<label for="" class="form-label">Titolo</label>
-						<input type="text" class="form-control" value="{{ old('title') ?? $comic->title }}" name="title" placeholder="Aggiungi titolo">
+					<div class="mb-4">
+						<label for="">Titolo</label>
+						<input type="text" value="{{ old('title') ?? $comic->title }}" name="title" placeholder="Aggiungi titolo">
 					</div>
-					<div class="mb-3">
-						<label for="" class="form-label">Desctizione</label>
-						<textarea rows="5" class="form-control"  name="description" placeholder="Aggiungi descrizione">{{ old('description') ?? $comic->description }}"</textarea>
+					<div class="mb-4">
+						<label for="">Descrizione</label>
+						<textarea rows="5"  name="description" placeholder="Aggiungi descrizione">{{ old('description') ?? $comic->description }}"</textarea>
 					</div>
-					<div class="mb-3">
-						<label for="" class="form-label">Prezzo</label>
-						<input type="text" class="form-control" value="{{ old('price') ?? $comic->price }}" name="price" placeholder="Aggiungi prezzo">
+					<div class="mb-4">
+						<label for="">Prezzo</label>
+						<input type="text" value="{{ old('price') ?? $comic->price }}" name="price" placeholder="Aggiungi prezzo">
 					</div>
-					<div class="mb-3">
-						<label for="" class="form-label">Serie</label>
-						<input type="text" class="form-control" value="{{ old('series') ?? $comic->series }}" name="series" placeholder="Aggiungi serie">
+					<div class="mb-4">
+						<label for="">Serie</label>
+						<input type="text" value="{{ old('series') ?? $comic->series }}" name="series" placeholder="Aggiungi serie">
 					</div>
-					<div class="mb-3">
-						<label for="" class="form-label">Data di vendita</label>
-						<input type="text" class="form-control" value="{{ old('sale_date') ?? $comic->sale_date }}" name="sale_date" placeholder="Aggiungi data di vendita">
+					<div class="mb-4">
+						<label for="">Data di vendita</label>
+						<input type="text" value="{{ old('sale_date') ?? $comic->sale_date }}" name="sale_date" placeholder="Aggiungi data di vendita">
 					</div>
-					<div class="mb-3">
-						<label for="" class="form-label">Tipo</label>
-						<input type="text" class="form-control" value="{{ old('type') ?? $comic->type }}" name="type" placeholder="Aggiungi tipo">
+					<div class="mb-4">
+						<label for="">Tipo</label>
+						<input type="text" value="{{ old('type') ?? $comic->type }}" name="type" placeholder="Aggiungi tipo">
 					</div>
-					<div class="mb-3">
-						<label for="" class="form-label">Thumbnail</label>
-						<input type="text" class="form-control" value="{{ old('thumb') ?? $comic->thumb }}" name="thumb" placeholder="Aggiungi link thumbnail">
+					<div class="mb-4">
+						<label for="">Thumbnail</label>
+						<input type="text" value="{{ old('thumb') ?? $comic->thumb }}" name="thumb" placeholder="Aggiungi link thumbnail">
 					</div>
 			
 					<div class="form-group">
-						<button type="submit" class="btn btn-primary">Crea il nuovo Comics</button>
+						<button type="submit" class="btn btn-primary">Slava le modifiche</button>
 					</div>
 				</form>
 			</div>

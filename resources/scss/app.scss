@@ -117,6 +117,20 @@ header {
 	height: 80px;
 }
 
+//form
+
+.comic-form {
+	input, textarea {
+		border: 0;
+		width: 100%;
+		border-bottom: 2px solid $primary-color;
+		display: block;
+	}
+	label {
+		font-weight: bold;
+	}
+}
+
 
 // my-classes
 
