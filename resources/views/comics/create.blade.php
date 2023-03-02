@@ -19,7 +19,7 @@
 						<input type="text" id="" aria-describedby="" name="title" placeholder="Aggiungi titolo">
 					</div>
 					<div class="mb-4">
-						<label for="">Desctizione</label>
+						<label for="">Descrizione</label>
 						<textarea rows="5" id="" aria-describedby="" name="description" placeholder="Aggiungi descrizione"></textarea>
 					</div>
 					<div class="mb-4">
